@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common Mistakes in Microsoft Fabric</title>
+  <title>Common Mistakes – Microsoft Fabric</title>
 
   <style>
     /* ===== Global Page Styling ===== */
@@ -45,15 +45,9 @@
       border-bottom: 1px solid #333;
       margin-bottom: 20px;
       padding: 10px 0;
-      position: relative;
-      z-index: 1;
       background-color: #0b0c10;
       height: 50px;
       align-items: center;
-    }
-
-    .tab {
-      font-size: 15px;
     }
 
     .tab a {
@@ -90,10 +84,8 @@
       text-decoration: underline;
     }
 
-    /* ===== Footer Always Clickable ===== */
+    /* ===== Footer ===== */
     footer {
-      position: relative;
-      z-index: 10;
       margin-top: 40px;
     }
   </style>
@@ -101,90 +93,80 @@
 
 <body>
 
-<h1>Common Mistakes in Microsoft Fabric</h1>
-<p>These are the most frequent beginner mistakes — and how to avoid them.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
+
+<h1>Common Mistakes</h1>
+<p>Beginners often misunderstand Fabric because it combines many workloads into one platform. Here are the most common mistakes and how to avoid them.</p>
 
 <!-- Diagram Row -->
 <div class="diagram">
   <div class="node">OneLake<br><small>Unified Storage</small></div>
   <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
   <div class="node">Warehouse<br><small>SQL Engine</small></div>
-  <div class="node">Pipelines<br><small>Data Movement</small></div>
   <div class="node">Real-Time<br><small>Streaming</small></div>
-</div>
-
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab active"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
-  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
-  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
-  <div class="tab"><a href="11-security.html">Security</a></div>
-</div>
-
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
 <!-- Content Box -->
 <div class="content">
-
-  <h2>1. Treating Fabric Like a Traditional Data Warehouse</h2>
+  <h2>❌ Mistake 1: Treating Fabric Like a Traditional Data Warehouse</h2>
   <p>
-    Many beginners assume Fabric works like a classic SQL warehouse.  
-    But Fabric is lake-first — meaning files, tables, notebooks, and SQL all share the same storage.
+    Fabric is not just a SQL warehouse. It is a unified analytics platform that supports lakehouse, real-time analytics, pipelines, notebooks, and BI — all on OneLake.
   </p>
 
-  <h2>2. Creating Multiple Copies of the Same Data</h2>
+  <h2>❌ Mistake 2: Copying Data Between Workloads</h2>
   <p>
-    OneLake eliminates the need for duplication.  
-    Copying data into multiple workspaces or warehouses creates confusion and wastes storage.
+    Many beginners still copy data into separate systems for SQL, ML, and dashboards.  
+    In Fabric, you should avoid duplication — every workload reads from OneLake.
   </p>
 
-  <h2>3. Ignoring Delta Format</h2>
+  <h2>❌ Mistake 3: Ignoring Delta Format</h2>
   <p>
-    Delta tables are the backbone of Fabric.  
-    Beginners often store raw CSVs instead — losing performance, reliability, and ACID transactions.
+    Delta tables are the backbone of Fabric. They support ACID transactions, time travel, and efficient updates.  
+    Beginners often store raw CSVs instead — which limits performance and reliability.
   </p>
 
-  <h2>4. Using Pipelines for Everything</h2>
+  <h2>❌ Mistake 4: Building Silos Inside Fabric</h2>
   <p>
-    Pipelines are great for scheduled movement, but not for real-time or high-volume ingestion.  
-    Use Eventstreams or KQL for streaming workloads.
+    Even though Fabric unifies data, teams sometimes create separate workspaces that don’t share datasets.  
+    Use shared semantic models and shared lakehouses to avoid fragmentation.
   </p>
 
-  <h2>5. Not Leveraging the Lakehouse</h2>
+  <h2>❌ Mistake 5: Overusing Notebooks for Everything</h2>
   <p>
-    The Lakehouse is the most flexible workspace in Fabric.  
-    Beginners often skip it and jump straight to Warehouse, missing out on notebooks, ML, and file-based analytics.
+    Notebooks are powerful, but they are not ideal for every workload.  
+    Use pipelines for scheduled ETL, SQL for structured queries, and notebooks for ML and exploration.
   </p>
 
-  <h2>6. Overcomplicating the Architecture</h2>
+  <h2>❌ Mistake 6: Forgetting Governance</h2>
   <p>
-    Fabric is designed to simplify analytics.  
-    Beginners sometimes recreate old multi-layer architectures (bronze/silver/gold) even when not needed.
+    Fabric makes data accessible — but without proper governance, access can become chaotic.  
+    Use domains, data policies, and lineage to maintain control.
   </p>
-
-  <h2>7. Forgetting Security Inheritance</h2>
-  <p>
-    OneLake security flows downward.  
-    If you secure a folder, everything inside inherits permissions — beginners often overlook this.
-  </p>
-
-  <h2>8. Mixing Workspace Purposes</h2>
-  <p>
-    Workspaces should be organized by business domain, not by random projects.  
-    Mixing unrelated items leads to clutter and permission issues.
-  </p>
-
 </div>
 
 <footer>
-  <p><a href="01-what-is-fabric.html">Back to Home</a></p>
+  <p><a href="/Fabric-Beginner/05-onelake.html">Next → OneLake</a></p>
 </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
