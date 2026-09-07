@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep Dive: Warehouse</title>
+  <title>Warehouse – Microsoft Fabric</title>
 
   <style>
+    /* ===== Global Page Styling ===== */
     body {
       background-color: #0b0c10;
       color: #eaeaea;
@@ -18,6 +19,7 @@
       color: #6c63ff;
     }
 
+    /* ===== Diagram Row ===== */
     .diagram {
       display: flex;
       justify-content: center;
@@ -36,6 +38,7 @@
       font-size: 16px;
     }
 
+    /* ===== Navigation Tabs ===== */
     .tabs {
       display: flex;
       gap: 20px;
@@ -63,6 +66,7 @@
       border-bottom: 3px solid #6c63ff;
     }
 
+    /* ===== Content Box ===== */
     .content {
       background-color: #1a1a1a;
       padding: 20px;
@@ -70,6 +74,7 @@
       line-height: 1.7;
     }
 
+    /* ===== Global Link Styling ===== */
     a {
       color: #00bcd4;
       text-decoration: none;
@@ -79,6 +84,7 @@
       text-decoration: underline;
     }
 
+    /* ===== Footer ===== */
     footer {
       margin-top: 40px;
     }
@@ -87,100 +93,82 @@
 
 <body>
 
-<h1>Deep Dive: Warehouse</h1>
-<p>The Warehouse brings structured SQL analytics to Microsoft Fabric.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
 
+<h1>Warehouse</h1>
+<p>The Fabric Warehouse is a modern, scalable SQL engine built directly on top of OneLake — without data movement.</p>
+
+<!-- Diagram Row -->
 <div class="diagram">
-  <div class="node">SQL Engine<br><small>High Performance</small></div>
-  <div class="node">Tables<br><small>Relational Storage</small></div>
-  <div class="node">Workloads<br><small>BI & Reporting</small></div>
-  <div class="node">Security<br><small>RBAC & Governance</small></div>
-  <div class="node">Integration<br><small>OneLake Native</small></div>
+  <div class="node">OneLake<br><small>Unified Storage</small></div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab active"><a href="07-warehouse.html">Warehouse</a></div>
-</div>
-
+<!-- Content Box -->
 <div class="content">
-
-  <h2>What Is the Warehouse?</h2>
+  <h2>What Is the Fabric Warehouse?</h2>
   <p>
     The Warehouse is Fabric’s fully managed SQL analytics engine.  
-    It provides structured tables, relational modeling, and high‑performance queries — all backed by OneLake.
+    It supports T‑SQL, integrates with Power BI, and reads Delta tables directly from OneLake — no ETL required.
   </p>
 
-  <h2>Why the Warehouse Matters</h2>
+  <h2>Why Warehouse Matters</h2>
   <p>
-    Business teams rely on SQL.  
-    The Warehouse gives them a familiar environment while still benefiting from Fabric’s unified storage.
+    Traditional warehouses require copying data from lakes into structured storage.  
+    Fabric eliminates this step — the Warehouse queries Delta tables directly.
   </p>
+
+  <p>
+    This means:
+  </p>
+  <ul>
+    <li>No ingestion pipelines</li>
+    <li>No duplicated storage</li>
+    <li>No synchronization jobs</li>
+    <li>No stale data</li>
+  </ul>
 
   <h2>Key Features</h2>
-
-  <h3>1. High‑Performance SQL</h3>
-  <p>
-    Optimized for BI workloads, dashboards, and reporting.
-  </p>
-
-  <h3>2. OneLake Native</h3>
-  <p>
-    No data copies — Warehouse tables live directly in OneLake.
-  </p>
-
-  <h3>3. Strong Governance</h3>
-  <p>
-    Role‑based access, schema control, and workspace security.
-  </p>
-
-  <h3>4. Perfect for BI Teams</h3>
-  <p>
-    Power BI connects directly to Warehouse tables for fast reporting.
-  </p>
-
-  <h2>Beginner Scenario: Water Filter Example</h2>
-  <p>
-    The Warehouse stores structured product tables:
-  </p>
-
   <ul>
-    <li>Product ID</li>
-    <li>Brand</li>
-    <li>Model</li>
-    <li>Compatibility</li>
-    <li>Inventory</li>
+    <li><strong>T‑SQL Support:</strong> Familiar SQL syntax for analysts and developers.</li>
+    <li><strong>Direct Lake Querying:</strong> Reads Delta tables without copying.</li>
+    <li><strong>Semantic Models:</strong> Build Power BI models directly on Warehouse tables.</li>
+    <li><strong>High Performance:</strong> Optimized for BI and reporting workloads.</li>
+    <li><strong>Unified Security:</strong> Same permissions across SQL, BI, and ML.</li>
   </ul>
 
+  <h2>Short Example</h2>
   <p>
-    When a customer searches for a filter, SQL queries fetch the exact match instantly.
+    A finance team stores transaction data in OneLake.  
+    The Warehouse queries the same Delta tables to generate monthly reports.  
+    Power BI dashboards refresh instantly — without moving or duplicating data.
   </p>
 
-  <h2>Professional Insight</h2>
   <p>
-    The Warehouse is ideal for:
+    The Warehouse becomes the central SQL engine for analytics.
   </p>
-
-  <ul>
-    <li>Dimensional modeling</li>
-    <li>Star schemas</li>
-    <li>BI dashboards</li>
-    <li>Operational reporting</li>
-  </ul>
-
-  <p>
-    It complements the Lakehouse — not replaces it.
-  </p>
-
 </div>
 
 <footer>
-  <p><a href="08-realtime.html">Next → Real‑Time Analytics</a></p>
+  <p><a href="/Fabric-Beginner/08-realtime.html">Next → Real-Time Analytics</a></p>
 </footer>
 
 </body>
