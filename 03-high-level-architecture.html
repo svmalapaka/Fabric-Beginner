@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>High-Level Architecture</title>
+  <title>High-Level Architecture – Microsoft Fabric</title>
 
   <style>
     /* ===== Global Page Styling ===== */
@@ -45,15 +45,9 @@
       border-bottom: 1px solid #333;
       margin-bottom: 20px;
       padding: 10px 0;
-      position: relative;
-      z-index: 1;
       background-color: #0b0c10;
       height: 50px;
       align-items: center;
-    }
-
-    .tab {
-      font-size: 15px;
     }
 
     .tab a {
@@ -90,10 +84,8 @@
       text-decoration: underline;
     }
 
-    /* ===== Footer Always Clickable ===== */
+    /* ===== Footer ===== */
     footer {
-      position: relative;
-      z-index: 10;
       margin-top: 40px;
     }
   </style>
@@ -101,84 +93,70 @@
 
 <body>
 
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
+
 <h1>High-Level Architecture</h1>
-<p>Click any component to explore it in detail →</p>
+<p>Fabric brings all analytics workloads together into one unified platform. Here’s how the major components fit together.</p>
 
 <!-- Diagram Row -->
 <div class="diagram">
   <div class="node">OneLake<br><small>Unified Storage</small></div>
   <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
   <div class="node">Warehouse<br><small>SQL Engine</small></div>
-  <div class="node">Pipelines<br><small>Data Movement</small></div>
   <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
-
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab active"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
-  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
-  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
-  <div class="tab"><a href="11-security.html">Security</a></div>
-</div>
-
 
 <!-- Content Box -->
 <div class="content">
-  <h2>The Fabric Architecture in Simple Terms</h2>
+  <h2>Unified Storage Layer</h2>
   <p>
-    Microsoft Fabric is built like a well-organized city. Every part has a job, and everything connects through OneLake — the central storage system.
+    Everything in Fabric starts with <strong>OneLake</strong>, a single, organization-wide data lake.
+    Instead of copying data between systems, Fabric lets every workload read from the same source.
   </p>
 
-  <h2>1. OneLake — The Foundation</h2>
+  <h2>Lakehouse Architecture</h2>
   <p>
-    OneLake is the single place where all your data lives. Instead of having 20 different databases and 10 different file systems, Fabric stores everything in one unified lake.
+    The Lakehouse combines the flexibility of a data lake with the structure of a warehouse.
+    It supports Delta tables, notebooks, SQL analytics, and real-time processing — all in one workspace.
   </p>
 
-  <h2>2. Lakehouse — Your Analytics Workspace</h2>
+  <h2>Warehouse Engine</h2>
   <p>
-    The Lakehouse is where analysts, engineers, and data scientists work together. It supports files, tables, notebooks, SQL, and machine learning — all in one place.
+    Fabric’s Warehouse provides a scalable SQL engine built on top of OneLake.
+    It supports T-SQL, semantic models, and BI workloads without requiring data movement.
   </p>
 
-  <h2>3. Warehouse — SQL for Business Teams</h2>
+  <h2>Real-Time Analytics</h2>
   <p>
-    The Warehouse gives business users a familiar SQL environment. It reads data directly from OneLake, so there is no duplication or syncing.
+    Real-Time Analytics ingests streaming data from IoT devices, logs, and events.
+    It enables dashboards and alerts that update instantly as new data arrives.
   </p>
 
-  <h2>4. Pipelines — Moving Data Automatically</h2>
+  <h2>Data Science & ML</h2>
   <p>
-    Pipelines bring data from external systems into Fabric. They clean, transform, and schedule data movement so everything stays fresh.
-  </p>
-
-  <h2>5. Real-Time Analytics — Streaming at Scale</h2>
-  <p>
-    Real-Time Analytics processes events as they happen — sensor data, logs, clicks, IoT streams — and makes them available instantly for dashboards and alerts.
-  </p>
-
-  <h2>How Everything Connects</h2>
-  <p>
-    All components read and write to OneLake. This means:
-  </p>
-
-  <ul>
-    <li>No more data copies</li>
-    <li>No more syncing issues</li>
-    <li>No more “which version is correct?” problems</li>
-    <li>Everyone works from the same source of truth</li>
-  </ul>
-
-  <p>
-    This unified architecture is what makes Fabric powerful, simple, and scalable.
+    Fabric includes notebooks, ML pipelines, and integrated model deployment.
+    Data scientists can train models directly on OneLake without exporting data.
   </p>
 </div>
 
 <footer>
-  <p><a href="04-common-mistakes.html">Next → Common Mistakes</a></p>
+  <p><a href="/Fabric-Beginner/04-common-mistakes.html">Next → Common Mistakes</a></p>
 </footer>
 
 </body>
