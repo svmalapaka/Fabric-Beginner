@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cost Optimization</title>
+  <title>Cost Management – Microsoft Fabric</title>
 
   <style>
+    /* ===== Global Page Styling ===== */
     body {
       background-color: #0b0c10;
       color: #eaeaea;
@@ -18,6 +19,7 @@
       color: #6c63ff;
     }
 
+    /* ===== Diagram Row ===== */
     .diagram {
       display: flex;
       justify-content: center;
@@ -36,6 +38,7 @@
       font-size: 16px;
     }
 
+    /* ===== Navigation Tabs ===== */
     .tabs {
       display: flex;
       gap: 20px;
@@ -63,6 +66,7 @@
       border-bottom: 3px solid #6c63ff;
     }
 
+    /* ===== Content Box ===== */
     .content {
       background-color: #1a1a1a;
       padding: 20px;
@@ -70,6 +74,7 @@
       line-height: 1.7;
     }
 
+    /* ===== Global Link Styling ===== */
     a {
       color: #00bcd4;
       text-decoration: none;
@@ -79,6 +84,7 @@
       text-decoration: underline;
     }
 
+    /* ===== Footer ===== */
     footer {
       margin-top: 40px;
     }
@@ -87,102 +93,87 @@
 
 <body>
 
-<h1>Cost Optimization</h1>
-<p>Fabric provides tools and strategies to help organizations reduce compute costs, storage costs, and operational overhead.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/12-administration.html">Administration</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/13-cost.html">Cost</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
 
+<h1>Cost Management</h1>
+<p>Cost management in Microsoft Fabric ensures that analytics workloads remain predictable, efficient, and aligned with business budgets.</p>
+
+<!-- Diagram Row -->
 <div class="diagram">
-  <div class="node">Capacity<br><small>Right-Sizing</small></div>
-  <div class="node">Workloads<br><small>Usage Control</small></div>
-  <div class="node">Pipelines<br><small>Efficient Scheduling</small></div>
-  <div class="node">Storage<br><small>Delta Tables</small></div>
-  <div class="node">Monitoring<br><small>Cost Insights</small></div>
+  <div class="node">OneLake<br><small>Unified Storage</small></div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
-  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
-  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
-  <div class="tab"><a href="11-security.html">Security</a></div>
-  <div class="tab"><a href="12-administration.html">Administration</a></div>
-  <div class="tab active"><a href="13-cost.html">Cost Optimization</a></div>
-</div>
-
+<!-- Content Box -->
 <div class="content">
-
-  <h2>Why Cost Optimization Matters</h2>
+  <h2>Why Cost Management Matters</h2>
   <p>
-    Fabric uses compute capacity units (CU) and storage in OneLake.  
-    Optimizing usage ensures predictable billing and avoids unnecessary spending.
+    Fabric centralizes analytics workloads, but without proper cost management, organizations may experience:
   </p>
-
-  <h2>Key Strategies</h2>
-
-  <h3>1. Right-Size Capacity</h3>
-  <p>
-    Choose the correct Fabric capacity SKU based on workload patterns.
-  </p>
-
   <ul>
-    <li>Small teams → F2 / F4</li>
-    <li>Medium workloads → F8 / F16</li>
-    <li>Enterprise workloads → F64+</li>
+    <li>Unexpected consumption spikes</li>
+    <li>Overloaded capacities</li>
+    <li>Duplicate workloads increasing cost</li>
+    <li>Unoptimized pipelines or notebooks</li>
+    <li>Unused items consuming resources</li>
   </ul>
 
-  <h3>2. Optimize Pipelines</h3>
   <p>
-    Schedule pipelines during off-peak hours and avoid unnecessary refreshes.
+    Cost management ensures predictable spending and efficient resource usage.
   </p>
 
-  <h3>3. Use Delta Tables</h3>
-  <p>
-    Delta reduces storage costs by enabling efficient updates instead of full rewrites.
-  </p>
-
-  <h3>4. Monitor Usage</h3>
-  <p>
-    Use Fabric’s built-in monitoring dashboards to track:
-  </p>
-
+  <h2>Key Concepts</h2>
   <ul>
-    <li>Compute consumption</li>
-    <li>Pipeline costs</li>
-    <li>Warehouse query costs</li>
-    <li>Storage growth</li>
+    <li><strong>Capacities:</strong> Fabric uses capacity units (CU) to allocate compute.</li>
+    <li><strong>Workload Optimization:</strong> SQL, Lakehouse, ML, and Real-Time workloads consume different amounts.</li>
+    <li><strong>Monitoring:</strong> Track usage, peak hours, and expensive operations.</li>
+    <li><strong>Governance:</strong> Prevent unnecessary duplication of datasets and pipelines.</li>
+    <li><strong>Lifecycle Management:</strong> Archive or delete unused items to reduce cost.</li>
   </ul>
 
-  <h3>5. Avoid Over-Processing</h3>
-  <p>
-    Use incremental refresh instead of full refresh.  
-    Use partitioning for large datasets.
-  </p>
-
-  <h2>Beginner Scenario: Water Filter Example</h2>
-  <p>
-    A refrigerator filter company can reduce costs by:
-  </p>
-
+  <h2>Cost Saving Strategies</h2>
   <ul>
-    <li>Refreshing inventory only once per day</li>
-    <li>Using Delta tables for product updates</li>
-    <li>Monitoring warehouse query usage</li>
+    <li>Use shared datasets instead of duplicates.</li>
+    <li>Schedule pipelines during off‑peak hours.</li>
+    <li>Optimize notebooks to avoid long-running sessions.</li>
+    <li>Use domains to reduce workspace sprawl.</li>
+    <li>Monitor capacity usage weekly.</li>
   </ul>
 
-  <h2>Professional Insight</h2>
+  <h2>Short Example</h2>
   <p>
-    Cost optimization is not about cutting features — it’s about using Fabric efficiently and intelligently.
+    A company notices that nightly pipelines consume high compute.  
+    They optimize transformations, reduce unnecessary joins, and move some tasks to incremental refresh.  
+    Monthly cost drops significantly while performance improves.
   </p>
 
+  <p>
+    Cost management keeps Fabric efficient and budget-friendly.
+  </p>
 </div>
 
 <footer>
-  <p><a href="14-glossary.html">Next → Fabric Glossary</a></p>
+  <p><a href="/Fabric-Beginner/index.html">Back to Home</a></p>
 </footer>
 
 </body>
