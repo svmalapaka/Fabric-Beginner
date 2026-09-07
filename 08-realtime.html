@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Analytics</title>
+  <title>Real-Time Analytics – Microsoft Fabric</title>
 
   <style>
+    /* ===== Global Page Styling ===== */
     body {
       background-color: #0b0c10;
       color: #eaeaea;
@@ -18,6 +19,7 @@
       color: #6c63ff;
     }
 
+    /* ===== Diagram Row ===== */
     .diagram {
       display: flex;
       justify-content: center;
@@ -36,6 +38,7 @@
       font-size: 16px;
     }
 
+    /* ===== Navigation Tabs ===== */
     .tabs {
       display: flex;
       gap: 20px;
@@ -63,6 +66,7 @@
       border-bottom: 3px solid #6c63ff;
     }
 
+    /* ===== Content Box ===== */
     .content {
       background-color: #1a1a1a;
       padding: 20px;
@@ -70,6 +74,7 @@
       line-height: 1.7;
     }
 
+    /* ===== Global Link Styling ===== */
     a {
       color: #00bcd4;
       text-decoration: none;
@@ -79,6 +84,7 @@
       text-decoration: underline;
     }
 
+    /* ===== Footer ===== */
     footer {
       margin-top: 40px;
     }
@@ -87,89 +93,82 @@
 
 <body>
 
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
+
 <h1>Real-Time Analytics</h1>
-<p>Streaming data, instant insights, and live dashboards — all powered by Fabric.</p>
+<p>Real-Time Analytics in Fabric lets you process streaming data instantly — perfect for IoT, logs, events, and live dashboards.</p>
 
+<!-- Diagram Row -->
 <div class="diagram">
-  <div class="node">Eventstreams<br><small>Ingestion</small></div>
-  <div class="node">KQL DB<br><small>Query Engine</small></div>
-  <div class="node">Dashboards<br><small>Live Updates</small></div>
-  <div class="node">IoT<br><small>Device Data</small></div>
-  <div class="node">Logs<br><small>Monitoring</small></div>
+  <div class="node">OneLake<br><small>Unified Storage</small></div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab active"><a href="08-realtime.html">Real-Time</a></div>
-</div>
-
+<!-- Content Box -->
 <div class="content">
-
   <h2>What Is Real-Time Analytics?</h2>
   <p>
-    Real-Time Analytics processes data the moment it arrives.  
-    Instead of waiting for nightly ETL jobs, Fabric lets you analyze events instantly.
+    Real-Time Analytics is Fabric’s streaming engine.  
+    It ingests high‑volume data from devices, applications, sensors, and logs — and makes it available for dashboards, alerts, and machine learning within seconds.
   </p>
 
   <h2>Why Real-Time Matters</h2>
   <p>
-    Modern systems generate continuous streams:
+    Many industries rely on instant insights:
   </p>
-
   <ul>
-    <li>Website clicks</li>
-    <li>Sensor readings</li>
-    <li>IoT devices</li>
-    <li>Application logs</li>
-    <li>Security events</li>
+    <li>Manufacturing: machine health and sensor alerts</li>
+    <li>Retail: live inventory and customer activity</li>
+    <li>Finance: fraud detection and transaction monitoring</li>
+    <li>Transportation: vehicle telemetry and routing</li>
+    <li>Security: anomaly detection and log analysis</li>
   </ul>
 
   <p>
-    Real-Time Analytics helps detect issues, monitor activity, and update dashboards instantly.
+    Fabric makes real-time analytics simple by integrating streaming directly with OneLake and Lakehouse.
   </p>
 
-  <h2>Key Components</h2>
-
-  <h3>1. Eventstreams</h3>
-  <p>
-    Eventstreams ingest data from devices, apps, and logs.  
-    They handle high-volume, continuous data with low latency.
-  </p>
-
-  <h3>2. KQL Database</h3>
-  <p>
-    KQL (Kusto Query Language) is optimized for log and telemetry analytics.  
-    It’s fast, scalable, and ideal for real-time dashboards.
-  </p>
-
-  <h3>3. Real-Time Dashboards</h3>
-  <p>
-    Dashboards update automatically as new events arrive — no refresh needed.
-  </p>
-
-  <h3>4. Alerts & Monitoring</h3>
-  <p>
-    You can trigger alerts when certain patterns appear, like:
-  </p>
-
+  <h2>Key Features</h2>
   <ul>
-    <li>High error rates</li>
-    <li>Temperature spikes</li>
-    <li>Suspicious login activity</li>
+    <li><strong>Event Streams:</strong> Ingest data from IoT, apps, and logs.</li>
+    <li><strong>KQL Database:</strong> High-performance query engine for log and telemetry data.</li>
+    <li><strong>Real-Time Dashboards:</strong> Power BI visuals update instantly.</li>
+    <li><strong>Delta Integration:</strong> Stream data directly into Delta tables.</li>
+    <li><strong>Alerts & Automation:</strong> Trigger actions when patterns appear.</li>
   </ul>
 
-  <h2>Beginner Scenario: Water Filter Example</h2>
+  <h2>Short Example</h2>
   <p>
-    When a customer searches for a refrigerator filter, real-time analytics can track:
+    A logistics company streams truck GPS data into Fabric.  
+    Real-Time Analytics detects delays, updates dashboards instantly, and triggers alerts when a vehicle stops unexpectedly.
   </p>
 
-  <ul>
-    <li>Search frequency</li>
-    <li>Click patterns</li>
-    <li>Inventory changes
+  <p>
+    This enables fast decisions and safer operations.
+  </p>
+</div>
+
+<footer>
+  <p><a href="/Fabric-Beginner/09-datascience.html">Next → Data Science</a></p>
+</footer>
+
+</body>
+</html>
