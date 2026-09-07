@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep Dive: OneLake</title>
+  <title>OneLake – Microsoft Fabric</title>
 
   <style>
     /* ===== Global Page Styling ===== */
@@ -45,15 +45,9 @@
       border-bottom: 1px solid #333;
       margin-bottom: 20px;
       padding: 10px 0;
-      position: relative;
-      z-index: 1;
       background-color: #0b0c10;
       height: 50px;
       align-items: center;
-    }
-
-    .tab {
-      font-size: 15px;
     }
 
     .tab a {
@@ -90,10 +84,8 @@
       text-decoration: underline;
     }
 
-    /* ===== Footer Always Clickable ===== */
+    /* ===== Footer ===== */
     footer {
-      position: relative;
-      z-index: 10;
       margin-top: 40px;
     }
   </style>
@@ -101,110 +93,77 @@
 
 <body>
 
-<h1>Deep Dive: OneLake</h1>
-<p>The foundation of Microsoft Fabric — simple for beginners, powerful for professionals.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
+
+<h1>OneLake</h1>
+<p>OneLake is the foundation of Microsoft Fabric — a single, unified data lake for your entire organization.</p>
 
 <!-- Diagram Row -->
 <div class="diagram">
   <div class="node">OneLake<br><small>Unified Storage</small></div>
-  <div class="node">Shortcuts<br><small>Multi-Cloud Access</small></div>
-  <div class="node">Delta Tables<br><small>ACID + Performance</small></div>
-  <div class="node">Domains<br><small>Organized Data</small></div>
-  <div class="node">Security<br><small>Inherited Access</small></div>
-</div>
-
-<!-- Tabs -->
-<div class="tabs">
-  <div class="tab">
-    <a href="01-what-is-fabric.html">Home</a>
-  </div>
-  <div class="tab">
-    <a href="02-why-it-matters.html">Why It Matters</a>
-  </div>
-  <div class="tab">
-    <a href="03-high-level-architecture.html">Architecture</a>
-  </div>
-  <div class="tab">
-    <a href="04-common-mistakes.html">Common Mistakes</a>
-  </div>
-  <div class="tab active">
-    <a href="05-onelake.html">OneLake</a>
-  </div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
 <!-- Content Box -->
 <div class="content">
-
   <h2>What Is OneLake?</h2>
   <p>
-    OneLake is the unified storage system for Microsoft Fabric.  
-    Think of it as **OneDrive for all your data** — files, tables, logs, streams, notebooks, and SQL all live in one place.
-  </p>
-
-  <p>
-    Instead of managing dozens of databases, buckets, and folders across multiple clouds, OneLake gives you a single, consistent storage layer.
+    OneLake is the “OneDrive for data.”  
+    It provides a single, organization-wide storage system where all Fabric workloads — SQL, Lakehouse, ML, Real-Time, and Power BI — read and write data without duplication.
   </p>
 
   <h2>Why OneLake Matters</h2>
   <p>
-    OneLake removes the biggest problem in analytics: **data silos**.  
-    When every team stores data separately, nothing matches — reports differ, dashboards disagree, and decisions suffer.
+    Traditional analytics platforms store data in multiple systems: warehouses, lakes, BI models, ML environments, and streaming engines.  
+    This creates silos, copies, and synchronization problems.
   </p>
 
   <p>
-    With OneLake, every Fabric engine (SQL, Spark, KQL, ML, Power BI) reads and writes to the same data.  
-    No copies. No syncing. No confusion.
+    OneLake eliminates these issues by serving as the **single source of truth**.
   </p>
 
-  <h2>Key Features</h2>
+  <h2>Key Benefits</h2>
+  <ul>
+    <li><strong>No data copies:</strong> All workloads share the same Delta tables.</li>
+    <li><strong>Unified governance:</strong> Security and access policies apply everywhere.</li>
+    <li><strong>High performance:</strong> Optimized for analytics, ML, and real-time workloads.</li>
+    <li><strong>Open format:</strong> Built on Delta Lake — open, reliable, and ACID-compliant.</li>
+    <li><strong>Direct integration:</strong> Power BI, SQL, notebooks, pipelines all use OneLake natively.</li>
+  </ul>
 
-  <h3>1. Delta Tables</h3>
+  <h2>Short Example</h2>
   <p>
-    Delta is the default table format in Fabric.  
-    It provides ACID transactions, time travel, schema evolution, and massive performance improvements.
-  </p>
-
-  <h3>2. Shortcuts</h3>
-  <p>
-    Shortcuts let you access data in other clouds (ADLS, S3, GCS) without copying it.  
-    This is a game‑changer for multi‑cloud companies.
-  </p>
-
-  <h3>3. Domains</h3>
-  <p>
-    Domains help organize data by business area — Finance, Sales, HR, Operations.  
-    This keeps workspaces clean and permissions simple.
-  </p>
-
-  <h3>4. Security Inheritance</h3>
-  <p>
-    OneLake security flows downward.  
-    If you secure a folder, everything inside inherits the same permissions automatically.
-  </p>
-
-  <h2>Beginner Scenario: Water Filter Example</h2>
-  <p>
-    When a customer searches for a refrigerator filter, OneLake ensures the product specs, compatibility data, inventory, and delivery zones all come from the same source of truth.
+    Imagine a retail company storing product inventory in OneLake.  
+    The warehouse team queries it using SQL.  
+    The data science team trains ML models on the same tables.  
+    Power BI dashboards read the same data — no exports, no copies, no sync jobs.
   </p>
 
   <p>
-    This prevents wrong recommendations, wrong delivery promises, and wrong product matches.
+    OneLake ensures everyone works from the same truth.
   </p>
-
-  <h2>Professional Insight</h2>
-  <p>
-    OneLake is not just storage — it is the **foundation** of Fabric’s architecture.  
-    Every engine, every workspace, every dataset depends on it.
-  </p>
-
-  <p>
-    Understanding OneLake deeply is the first step toward mastering Fabric.
-  </p>
-
 </div>
 
 <footer>
-  <p><a href="06-next-topic.html">Next → Page 6</a></p>
+  <p><a href="/Fabric-Beginner/06-lakehouse.html">Next → Lakehouse</a></p>
 </footer>
 
 </body>
