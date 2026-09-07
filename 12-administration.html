@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administration & Monitoring</title>
+  <title>Administration – Microsoft Fabric</title>
 
   <style>
+    /* ===== Global Page Styling ===== */
     body {
       background-color: #0b0c10;
       color: #eaeaea;
@@ -18,6 +19,7 @@
       color: #6c63ff;
     }
 
+    /* ===== Diagram Row ===== */
     .diagram {
       display: flex;
       justify-content: center;
@@ -36,6 +38,7 @@
       font-size: 16px;
     }
 
+    /* ===== Navigation Tabs ===== */
     .tabs {
       display: flex;
       gap: 20px;
@@ -63,6 +66,7 @@
       border-bottom: 3px solid #6c63ff;
     }
 
+    /* ===== Content Box ===== */
     .content {
       background-color: #1a1a1a;
       padding: 20px;
@@ -70,6 +74,7 @@
       line-height: 1.7;
     }
 
+    /* ===== Global Link Styling ===== */
     a {
       color: #00bcd4;
       text-decoration: none;
@@ -79,6 +84,7 @@
       text-decoration: underline;
     }
 
+    /* ===== Footer ===== */
     footer {
       margin-top: 40px;
     }
@@ -87,113 +93,83 @@
 
 <body>
 
-<h1>Administration & Monitoring</h1>
-<p>Fabric provides unified tools for managing workspaces, monitoring workloads, and ensuring smooth operations.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/12-administration.html">Administration</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
 
+<h1>Administration</h1>
+<p>Administration in Microsoft Fabric focuses on managing workspaces, capacities, permissions, and platform operations to ensure a smooth and scalable analytics environment.</p>
+
+<!-- Diagram Row -->
 <div class="diagram">
-  <div class="node">Admin Portal<br><small>Central Control</small></div>
-  <div class="node">Monitoring<br><small>Dashboards</small></div>
-  <div class="node">Capacity<br><small>Resource Mgmt</small></div>
-  <div class="node">Workloads<br><small>Usage Tracking</small></div>
-  <div class="node">Alerts<br><small>Notifications</small></div>
+  <div class="node">OneLake<br><small>Unified Storage</small></div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
-  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
-  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
-  <div class="tab"><a href="11-security.html">Security</a></div>
-  <div class="tab active"><a href="12-administration.html">Administration</a></div>
-</div>
-
+<!-- Content Box -->
 <div class="content">
-
-  <h2>Admin Portal</h2>
+  <h2>What Is Administration in Fabric?</h2>
   <p>
-    The Admin Portal provides centralized control over Fabric resources, capacities, and governance settings.
+    Administration covers the operational side of Fabric — managing workspaces, assigning roles, monitoring usage, configuring capacities, and ensuring the platform runs efficiently.
   </p>
 
-  <h2>Monitoring Dashboards</h2>
+  <h2>Why Administration Matters</h2>
   <p>
-    Fabric includes built-in dashboards to track:
+    Without proper administration, organizations face:
   </p>
-
   <ul>
-    <li>Pipeline runs</li>
-    <li>Notebook executions</li>
-    <li>Warehouse queries</li>
-    <li>Lakehouse operations</li>
-    <li>Real-time event streams</li>
+    <li>Uncontrolled workspace sprawl</li>
+    <li>Performance bottlenecks</li>
+    <li>Incorrect permissions</li>
+    <li>Cost overruns</li>
+    <li>Operational confusion</li>
   </ul>
 
   <p>
-    These dashboards help administrators detect issues early.
+    Fabric provides centralized tools to manage all of this.
   </p>
 
-  <h2>Capacity Management</h2>
-  <p>
-    Administrators can allocate and monitor compute capacity across workloads:
-  </p>
-
+  <h2>Key Responsibilities</h2>
   <ul>
-    <li>Lakehouse</li>
-    <li>Warehouse</li>
-    <li>Real-Time Analytics</li>
-    <li>Data Science</li>
+    <li><strong>Workspace Management:</strong> Create, organize, and govern workspaces.</li>
+    <li><strong>Role Assignments:</strong> Admin, Member, Contributor, Viewer.</li>
+    <li><strong>Capacity Management:</strong> Assign workloads to capacities for performance.</li>
+    <li><strong>Monitoring:</strong> Track usage, performance, and resource consumption.</li>
+    <li><strong>Item Lifecycle:</strong> Manage datasets, lakehouses, warehouses, and pipelines.</li>
+    <li><strong>Compliance:</strong> Ensure governance and security policies are enforced.</li>
   </ul>
 
+  <h2>Short Example</h2>
   <p>
-    Proper capacity management ensures performance and cost efficiency.
+    A company creates separate workspaces for Finance, Sales, and Operations.  
+    Each workspace has assigned roles, capacity settings, and governance policies.  
+    Administrators monitor usage to ensure workloads run smoothly and costs remain predictable.
   </p>
 
-  <h2>Alerts & Notifications</h2>
   <p>
-    Alerts can be configured for:
+    Administration keeps Fabric organized, scalable, and efficient.
   </p>
-
-  <ul>
-    <li>Failed pipeline runs</li>
-    <li>High query latency</li>
-    <li>Capacity overload</li>
-    <li>Security violations</li>
-  </ul>
-
-  <p>
-    Alerts help teams respond quickly to operational issues.
-  </p>
-
-  <h2>Beginner Scenario: Water Filter Example</h2>
-  <p>
-    A company selling refrigerator filters can monitor:
-  </p>
-
-  <ul>
-    <li>Inventory updates</li>
-    <li>Search trends</li>
-    <li>Pipeline refresh failures</li>
-    <li>Warehouse query performance</li>
-  </ul>
-
-  <p>
-    This ensures smooth operations and customer satisfaction.
-  </p>
-
-  <h2>Professional Insight</h2>
-  <p>
-    Administration and monitoring are essential for maintaining reliability, performance, and cost control across Fabric workloads.
-  </p>
-
 </div>
 
 <footer>
-  <p><a href="13-cost.html">Next → Cost Optimization</a></p>
+  <p><a href="/Fabric-Beginner/index.html">Back to Home</a></p>
 </footer>
 
 </body>
