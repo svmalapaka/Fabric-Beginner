@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep Dive: Lakehouse</title>
+  <title>Lakehouse – Microsoft Fabric</title>
 
   <style>
     /* ===== Global Page Styling ===== */
@@ -45,15 +45,9 @@
       border-bottom: 1px solid #333;
       margin-bottom: 20px;
       padding: 10px 0;
-      position: relative;
-      z-index: 1;
       background-color: #0b0c10;
       height: 50px;
       align-items: center;
-    }
-
-    .tab {
-      font-size: 15px;
     }
 
     .tab a {
@@ -90,10 +84,8 @@
       text-decoration: underline;
     }
 
-    /* ===== Footer Always Clickable ===== */
+    /* ===== Footer ===== */
     footer {
-      position: relative;
-      z-index: 10;
       margin-top: 40px;
     }
   </style>
@@ -101,96 +93,82 @@
 
 <body>
 
-<h1>Deep Dive: Lakehouse</h1>
-<p>The Lakehouse is where analytics, engineering, and machine learning come together.</p>
+  <!-- ⭐ HEADER -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab active"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
+
+<h1>Lakehouse</h1>
+<p>The Lakehouse is Fabric’s unified analytics workspace — combining the flexibility of a data lake with the structure of a warehouse.</p>
 
 <!-- Diagram Row -->
 <div class="diagram">
-  <div class="node">Files<br><small>Parquet, Delta</small></div>
-  <div class="node">Tables<br><small>SQL + ACID</small></div>
-  <div class="node">Notebooks<br><small>Python & Spark</small></div>
-  <div class="node">SQL Endpoints<br><small>Business Access</small></div>
-  <div class="node">ML<br><small>Training & Scoring</small></div>
-</div>
-
-<!-- Tabs -->
-<div class="tabs">
-  <div class="tab">
-    <a href="01-what-is-fabric.html">Home</a>
-  </div>
-  <div class="tab">
-    <a href="02-why-it-matters.html">Why It Matters</a>
-  </div>
-  <div class="tab">
-    <a href="03-high-level-architecture.html">Architecture</a>
-  </div>
-  <div class="tab">
-    <a href="04-common-mistakes.html">Common Mistakes</a>
-  </div>
-  <div class="tab">
-    <a href="05-onelake.html">OneLake</a>
-  </div>
-  <div class="tab active">
-    <a href="06-lakehouse.html">Lakehouse</a>
-  </div>
+  <div class="node">OneLake<br><small>Unified Storage</small></div>
+  <div class="node">Lakehouse<br><small>Analytics Workspace</small></div>
+  <div class="node">Warehouse<br><small>SQL Engine</small></div>
+  <div class="node">Real-Time<br><small>Streaming</small></div>
+  <div class="node">Data Science<br><small>ML & Notebooks</small></div>
 </div>
 
 <!-- Content Box -->
 <div class="content">
-
-  <h2>What Is the Lakehouse?</h2>
+  <h2>What Is a Lakehouse?</h2>
   <p>
-    The Lakehouse is your unified analytics workspace.  
-    It combines the flexibility of a data lake with the structure of a data warehouse.
+    A Lakehouse is a single workspace where you can store data, run SQL queries, build ML models, create dashboards, and manage pipelines — all backed by OneLake.
   </p>
 
+  <h2>Why Lakehouse Matters</h2>
   <p>
-    Engineers, analysts, and data scientists all work here — using files, tables, notebooks, SQL, and machine learning in one place.
+    Traditional architectures split workloads across multiple systems:
   </p>
-
-  <h2>Why the Lakehouse Matters</h2>
-  <p>
-    Traditional systems split work across multiple tools:
-  </p>
-
   <ul>
-    <li>Data engineers use Spark</li>
-    <li>Analysts use SQL</li>
-    <li>Data scientists use notebooks</li>
-    <li>BI teams use dashboards</li>
+    <li>Data lakes for raw files</li>
+    <li>Warehouses for SQL analytics</li>
+    <li>ML environments for notebooks</li>
+    <li>BI tools for dashboards</li>
   </ul>
 
   <p>
-    The Lakehouse unifies all of these into a single workspace backed by OneLake.
+    The Lakehouse eliminates this fragmentation by providing a single environment for all analytics tasks.
   </p>
 
   <h2>Key Features</h2>
-
-  <h3>1. Delta Tables</h3>
-  <p>
-    Delta tables provide ACID transactions, schema evolution, and time travel — essential for reliable analytics.
-  </p>
-
-  <h3>2. SQL Endpoints</h3>
-  <p>
-    Business teams can query Lakehouse tables using familiar SQL without needing Spark knowledge.
-  </p>
-
-  <h3>3. Notebooks</h3>
-  <p>
-    Python, Spark, and ML workflows run directly inside the Lakehouse.
-  </p>
-
-  <h3>4. File + Table Unity</h3>
-  <p>
-    Files and tables live together.  
-    You can convert files to tables instantly — no ETL required.
-  </p>
-
-  <h2>Beginner Scenario: Water Filter Example</h2>
-  <p>
-    When a customer searches for a refrigerator filter, the Lakehouse stores:
-  </p>
-
   <ul>
-    <li>Product specs
+    <li><strong>Delta Tables:</strong> Reliable, ACID-compliant storage with time travel.</li>
+    <li><strong>SQL + Notebooks:</strong> Use both T-SQL and Python in the same workspace.</li>
+    <li><strong>Direct Power BI Integration:</strong> Build semantic models directly on Lakehouse tables.</li>
+    <li><strong>Unified Security:</strong> Permissions apply across SQL, ML, and BI.</li>
+    <li><strong>No Copies:</strong> Everything reads from OneLake — no duplication.</li>
+  </ul>
+
+  <h2>Short Example</h2>
+  <p>
+    A manufacturing company stores sensor data in a Lakehouse.  
+    Engineers query it using SQL.  
+    Data scientists train ML models on the same Delta tables.  
+    Power BI dashboards visualize the results — all without moving data.
+  </p>
+
+  <p>
+    The Lakehouse becomes the central hub for analytics.
+  </p>
+</div>
+
+<footer>
+  <p><a href="/Fabric-Beginner/07-warehouse.html">Next → Warehouse</a></p>
+</footer>
+
+</body>
+</html>
