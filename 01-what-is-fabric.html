@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is Microsoft Fabric?</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ⭐ Diagram + Tabs CSS (needed because header.html uses them) */
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+      color: #eaeaea;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .node:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(108,99,255,0.6);
+      color: #6c63ff;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      background-color: #0b0c10;
+      padding: 10px 0;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #aaa;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    .tab.active {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    footer {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ⭐ Load shared header -->
+<div id="header"></div>
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+</script>
+
+<!-- ⭐ Page-specific content ONLY -->
+<h1>What is Microsoft Fabric?</h1>
+<p>Click any component to explore it in detail →</p>
+
+<div class="content">
+  <h2>Fabric Feels Like...</h2>
+  <p>
+    Microsoft Fabric is a unified data platform that brings all your company’s data,
+    analytics, reporting, and machine learning into one connected ecosystem.
+  </p>
+
+  <p>
+    Fabric feels like <strong>Google Drive for all company information</strong>, 
+    <strong>Excel that’s always updated and shared</strong>, 
+    <strong>a smart chart‑maker that helps everyone understand their numbers</strong>, 
+    and <strong>an organized folder where everything is stored neatly</strong>.
+  </p>
+
+  <p>
+    It’s the one place where all information lives together, stays clean, stays updated,
+    and is easy for everyone to use — whether you're an analyst, engineer, data scientist,
+    or business user.
+  </p>
+</div>
+
+<footer style="margin-top:40px;">
+  <p><a href="02-why-it-matters.html">Next → Why Fabric Matters</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Science & Machine Learning</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: #0b0c10;
+      height: 50px;
+      align-items: center;
+    }
+
+    .tab a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .tab a:hover {
+      text-decoration: underline;
+    }
+
+    .tab.active a {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Data Science & Machine Learning</h1>
+<p>Fabric brings notebooks, ML training, feature engineering, and model deployment into one unified workspace.</p>
+
+<div class="diagram">
+  <div class="node">Notebooks<br><small>Python & Spark</small></div>
+  <div class="node">ML Training<br><small>Models</small></div>
+  <div class="node">Feature Store<br><small>Reusable Features</small></div>
+  <div class="node">Scoring<br><small>Batch & Real-Time</small></div>
+  <div class="node">Integration<br><small>Lakehouse + OneLake</small></div>
+</div>
+
+<div class="tabs">
+  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
+  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
+  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
+  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
+  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
+  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
+  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
+  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
+  <div class="tab active"><a href="09-datascience.html">Data Science</a></div>
+</div>
+
+<div class="content">
+
+  <h2>What Is Data Science in Fabric?</h2>
+  <p>
+    Fabric integrates data science directly into the Lakehouse.  
+    You can run notebooks, train models, engineer features, and deploy scoring pipelines — all backed by OneLake.
+  </p>
+
+  <h2>Why It Matters</h2>
+  <p>
+    Traditional ML workflows require multiple tools:
+  </p>
+
+  <ul>
+    <li>One tool for data prep</li>
+    <li>Another for notebooks</li>
+    <li>Another for training</li>
+    <li>Another for deployment</li>
+  </ul>
+
+  <p>
+    Fabric unifies all of this into one workspace.
+  </p>
+
+  <h2>Key Components</h2>
+
+  <h3>1. Notebooks</h3>
+  <p>
+    Python and Spark notebooks run directly inside the Lakehouse.  
+    Perfect for data exploration, feature engineering, and ML experiments.
+  </p>
+
+  <h3>2. ML Training</h3>
+  <p>
+    You can train models using:
+  </p>
+
+  <ul>
+    <li>Scikit-learn</li>
+    <li>PyTorch</li>
+    <li>TensorFlow</li>
+    <li>Spark MLlib</li>
+  </ul>
+
+  <p>
+    All training data comes directly from OneLake.
+  </p>
+
+  <h3>3. Feature Store</h3>
+  <p>
+    Fabric supports reusable features — shared across teams and models.  
+    This prevents duplication and ensures consistency.
+  </p>
+
+  <h3>4. Scoring Pipelines</h3>
+  <p>
+    Models can be deployed for:
+  </p>
+
+  <ul>
+    <li>Batch scoring</li>
+    <li>Real-time scoring</li>
+    <li>Dashboard integration</li>
+  </ul>
+
+  <h2>Beginner Scenario: Water Filter Example</h2>
+  <p>
+    A model can predict:
+  </p>
+
+  <ul>
+    <li>Which filter a customer is likely to need</li>
+    <li>Which products are frequently bought together</li>
+    <li>Which customers need reminders for replacements</li>
+  </ul>
+
+  <p>
+    All trained using Lakehouse data.
+  </p>
+
+  <h2>Professional Insight</h2>
+  <p>
+    Fabric’s ML layer is ideal for:
+  </p>
+
+  <ul>
+    <li>Demand forecasting</li>
+    <li>Recommendation systems</li>
+    <li>Fraud detection</li>
+    <li>Predictive maintenance</li>
+    <li>Customer segmentation</li>
+  </ul>
+
+  <p>
+    And because everything lives in OneLake, ML workflows are simpler, faster, and more reliable.
+  </p>
+
+</div>
+
+<footer>
+  <p><a href="10-pipelines.html">Next → Pipelines vs Dataflows vs Notebooks</a></p>
+</footer>
+
+</body>
+</html>
+

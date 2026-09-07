@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security & Governance</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: #0b0c10;
+      height: 50px;
+      align-items: center;
+    }
+
+    .tab a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .tab a:hover {
+      text-decoration: underline;
+    }
+
+    .tab.active a {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Security & Governance</h1>
+<p>Fabric provides unified, enterprise-grade security across OneLake, Lakehouse, Warehouse, and all analytics workloads.</p>
+
+<div class="diagram">
+  <div class="node">RBAC<br><small>Role-Based Access</small></div>
+  <div class="node">Domains<br><small>Business Boundaries</small></div>
+  <div class="node">Lineage<br><small>Tracking</small></div>
+  <div class="node">Sensitivity<br><small>Labels</small></div>
+  <div class="node">Monitoring<br><small>Audits</small></div>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active"><a href="01-what-is-fabric.html">Home</a></div>
+  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
+  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
+  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
+  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
+  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
+  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
+  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
+  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
+  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
+  <div class="tab"><a href="11-security.html">Security</a></div>
+</div>
+
+
+<div class="content">
+
+  <h2>Why Security Matters</h2>
+  <p>
+    Data is the most valuable asset in any organization.  
+    Fabric ensures that data is protected, governed, and monitored across all workloads.
+  </p>
+
+  <h2>Key Security Concepts</h2>
+
+  <h3>1. Role-Based Access Control (RBAC)</h3>
+  <p>
+    RBAC defines who can access what.  
+    Permissions apply at workspace, item, folder, and table levels.
+  </p>
+
+  <h3>2. Domains</h3>
+  <p>
+    Domains organize data by business area — Finance, Sales, HR, Operations.  
+    They simplify governance and permission management.
+  </p>
+
+  <h3>3. Sensitivity Labels</h3>
+  <p>
+    You can classify data as:
+  </p>
+
+  <ul>
+    <li>Public</li>
+    <li>Confidential</li>
+    <li>Highly Confidential</li>
+    <li>Restricted</li>
+  </ul>
+
+  <p>
+    Labels flow across Fabric items, including Power BI reports.
+  </p>
+
+  <h3>4. Lineage</h3>
+  <p>
+    Fabric tracks where data comes from and how it moves.  
+    This helps with audits, compliance, and debugging.
+  </p>
+
+  <h3>5. Monitoring & Auditing</h3>
+  <p>
+    Fabric logs:
+  </p>
+
+  <ul>
+    <li>Access events</li>
+    <li>Data changes</li>
+    <li>Pipeline runs</li>
+    <li>Notebook executions</li>
+    <li>Security violations</li>
+  </ul>
+
+  <p>
+    Perfect for compliance and operational oversight.
+  </p>
+
+  <h2>Beginner Scenario: Water Filter Example</h2>
+  <p>
+    A company selling refrigerator filters must protect:
+  </p>
+
+  <ul>
+    <li>Customer data</li>
+    <li>Order history</li>
+    <li>Payment information</li>
+    <li>Inventory systems</li>
+  </ul>
+
+  <p>
+    Fabric ensures only authorized teams can access sensitive data.
+  </p>
+
+  <h2>Professional Insight</h2>
+  <p>
+    Security is not optional — it is foundational.  
+    Fabric’s unified governance model ensures consistency across all analytics workloads.
+  </p>
+
+</div>
+
+<footer>
+  <p><a href="12-administration.html">Next → Administration & Monitoring</a></p>
+</footer>
+
+</body>
+</html>

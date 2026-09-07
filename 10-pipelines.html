@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipelines vs Dataflows vs Notebooks</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: #0b0c10;
+      height: 50px;
+      align-items: center;
+    }
+
+    .tab a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .tab a:hover {
+      text-decoration: underline;
+    }
+
+    .tab.active a {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Pipelines vs Dataflows vs Notebooks</h1>
+<p>Three powerful ways to move, transform, and process data in Microsoft Fabric.</p>
+
+<div class="diagram">
+  <div class="node">Pipelines<br><small>ETL & Scheduling</small></div>
+  <div class="node">Dataflows<br><small>Low-Code Prep</small></div>
+  <div class="node">Notebooks<br><small>Code & ML</small></div>
+</div>
+
+<div class="tabs">
+  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
+  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
+  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
+  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
+  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
+  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
+  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
+  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
+  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
+  <div class="tab active"><a href="10-pipelines.html">Pipelines</a></div>
+</div>
+
+<div class="content">
+
+  <h2>Why This Page Matters</h2>
+  <p>
+    Beginners often confuse Pipelines, Dataflows, and Notebooks.  
+    Professionals use all three — but for different purposes.
+  </p>
+
+  <h2>Pipelines</h2>
+  <p>
+    Pipelines are for **ETL, automation, and scheduled data movement**.
+  </p>
+
+  <ul>
+    <li>Move data from external systems</li>
+    <li>Schedule daily or hourly refreshes</li>
+    <li>Orchestrate multi-step workflows</li>
+    <li>Ideal for batch processing</li>
+  </ul>
+
+  <p>
+    Pipelines = automation + scheduling.
+  </p>
+
+  <h2>Dataflows</h2>
+  <p>
+    Dataflows are **low-code data preparation** using Power Query.
+  </p>
+
+  <ul>
+    <li>Drag-and-drop transformations</li>
+    <li>Perfect for business users</li>
+    <li>Great for cleaning and shaping data</li>
+    <li>Outputs Delta tables in OneLake</li>
+  </ul>
+
+  <p>
+    Dataflows = easy transformations without code.
+  </p>
+
+  <h2>Notebooks</h2>
+  <p>
+    Notebooks are for **code-first data engineering and machine learning**.
+  </p>
+
+  <ul>
+    <li>Python, Spark, SQL</li>
+    <li>Feature engineering</li>
+    <li>ML training and scoring</li>
+    <li>Advanced transformations</li>
+  </ul>
+
+  <p>
+    Notebooks = full control + ML + advanced processing.
+  </p>
+
+  <h2>Beginner Scenario: Water Filter Example</h2>
+  <p>
+    A company selling refrigerator filters might use:
+  </p>
+
+  <ul>
+    <li><strong>Pipelines</strong> to ingest daily inventory updates</li>
+    <li><strong>Dataflows</strong> to clean product descriptions</li>
+    <li><strong>Notebooks</strong> to train a recommendation model</li>
+  </ul>
+
+  <p>
+    Each tool plays a different role — together they form a complete workflow.
+  </p>
+
+  <h2>Professional Insight</h2>
+  <p>
+    Use Pipelines for automation, Dataflows for business prep, and Notebooks for engineering + ML.  
+    Fabric unifies all three under OneLake.
+  </p>
+
+</div>
+
+<footer>
+  <p><a href="11-security.html">Next → Security & Governance</a></p>
+</footer>
+
+</body>
+</html>

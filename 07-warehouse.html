@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Dive: Warehouse</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: #0b0c10;
+      height: 50px;
+      align-items: center;
+    }
+
+    .tab a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .tab a:hover {
+      text-decoration: underline;
+    }
+
+    .tab.active a {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Deep Dive: Warehouse</h1>
+<p>The Warehouse brings structured SQL analytics to Microsoft Fabric.</p>
+
+<div class="diagram">
+  <div class="node">SQL Engine<br><small>High Performance</small></div>
+  <div class="node">Tables<br><small>Relational Storage</small></div>
+  <div class="node">Workloads<br><small>BI & Reporting</small></div>
+  <div class="node">Security<br><small>RBAC & Governance</small></div>
+  <div class="node">Integration<br><small>OneLake Native</small></div>
+</div>
+
+<div class="tabs">
+  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
+  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
+  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
+  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
+  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
+  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
+  <div class="tab active"><a href="07-warehouse.html">Warehouse</a></div>
+</div>
+
+<div class="content">
+
+  <h2>What Is the Warehouse?</h2>
+  <p>
+    The Warehouse is Fabric’s fully managed SQL analytics engine.  
+    It provides structured tables, relational modeling, and high‑performance queries — all backed by OneLake.
+  </p>
+
+  <h2>Why the Warehouse Matters</h2>
+  <p>
+    Business teams rely on SQL.  
+    The Warehouse gives them a familiar environment while still benefiting from Fabric’s unified storage.
+  </p>
+
+  <h2>Key Features</h2>
+
+  <h3>1. High‑Performance SQL</h3>
+  <p>
+    Optimized for BI workloads, dashboards, and reporting.
+  </p>
+
+  <h3>2. OneLake Native</h3>
+  <p>
+    No data copies — Warehouse tables live directly in OneLake.
+  </p>
+
+  <h3>3. Strong Governance</h3>
+  <p>
+    Role‑based access, schema control, and workspace security.
+  </p>
+
+  <h3>4. Perfect for BI Teams</h3>
+  <p>
+    Power BI connects directly to Warehouse tables for fast reporting.
+  </p>
+
+  <h2>Beginner Scenario: Water Filter Example</h2>
+  <p>
+    The Warehouse stores structured product tables:
+  </p>
+
+  <ul>
+    <li>Product ID</li>
+    <li>Brand</li>
+    <li>Model</li>
+    <li>Compatibility</li>
+    <li>Inventory</li>
+  </ul>
+
+  <p>
+    When a customer searches for a filter, SQL queries fetch the exact match instantly.
+  </p>
+
+  <h2>Professional Insight</h2>
+  <p>
+    The Warehouse is ideal for:
+  </p>
+
+  <ul>
+    <li>Dimensional modeling</li>
+    <li>Star schemas</li>
+    <li>BI dashboards</li>
+    <li>Operational reporting</li>
+  </ul>
+
+  <p>
+    It complements the Lakehouse — not replaces it.
+  </p>
+
+</div>
+
+<footer>
+  <p><a href="08-realtime.html">Next → Real‑Time Analytics</a></p>
+</footer>
+
+</body>
+</html>

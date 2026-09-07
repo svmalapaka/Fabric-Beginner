@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration & Monitoring</title>
+
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #eaeaea;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2 {
+      color: #6c63ff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 60px 0;
+    }
+
+    .node {
+      background-color: #1f1f1f;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(108,99,255,0.4);
+      text-align: center;
+      width: 180px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      background-color: #0b0c10;
+      height: 50px;
+      align-items: center;
+    }
+
+    .tab a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .tab a:hover {
+      text-decoration: underline;
+    }
+
+    .tab.active a {
+      color: #fff;
+      border-bottom: 3px solid #6c63ff;
+    }
+
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Administration & Monitoring</h1>
+<p>Fabric provides unified tools for managing workspaces, monitoring workloads, and ensuring smooth operations.</p>
+
+<div class="diagram">
+  <div class="node">Admin Portal<br><small>Central Control</small></div>
+  <div class="node">Monitoring<br><small>Dashboards</small></div>
+  <div class="node">Capacity<br><small>Resource Mgmt</small></div>
+  <div class="node">Workloads<br><small>Usage Tracking</small></div>
+  <div class="node">Alerts<br><small>Notifications</small></div>
+</div>
+
+<div class="tabs">
+  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
+  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
+  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
+  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
+  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
+  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
+  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
+  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
+  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
+  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
+  <div class="tab"><a href="11-security.html">Security</a></div>
+  <div class="tab active"><a href="12-administration.html">Administration</a></div>
+</div>
+
+<div class="content">
+
+  <h2>Admin Portal</h2>
+  <p>
+    The Admin Portal provides centralized control over Fabric resources, capacities, and governance settings.
+  </p>
+
+  <h2>Monitoring Dashboards</h2>
+  <p>
+    Fabric includes built-in dashboards to track:
+  </p>
+
+  <ul>
+    <li>Pipeline runs</li>
+    <li>Notebook executions</li>
+    <li>Warehouse queries</li>
+    <li>Lakehouse operations</li>
+    <li>Real-time event streams</li>
+  </ul>
+
+  <p>
+    These dashboards help administrators detect issues early.
+  </p>
+
+  <h2>Capacity Management</h2>
+  <p>
+    Administrators can allocate and monitor compute capacity across workloads:
+  </p>
+
+  <ul>
+    <li>Lakehouse</li>
+    <li>Warehouse</li>
+    <li>Real-Time Analytics</li>
+    <li>Data Science</li>
+  </ul>
+
+  <p>
+    Proper capacity management ensures performance and cost efficiency.
+  </p>
+
+  <h2>Alerts & Notifications</h2>
+  <p>
+    Alerts can be configured for:
+  </p>
+
+  <ul>
+    <li>Failed pipeline runs</li>
+    <li>High query latency</li>
+    <li>Capacity overload</li>
+    <li>Security violations</li>
+  </ul>
+
+  <p>
+    Alerts help teams respond quickly to operational issues.
+  </p>
+
+  <h2>Beginner Scenario: Water Filter Example</h2>
+  <p>
+    A company selling refrigerator filters can monitor:
+  </p>
+
+  <ul>
+    <li>Inventory updates</li>
+    <li>Search trends</li>
+    <li>Pipeline refresh failures</li>
+    <li>Warehouse query performance</li>
+  </ul>
+
+  <p>
+    This ensures smooth operations and customer satisfaction.
+  </p>
+
+  <h2>Professional Insight</h2>
+  <p>
+    Administration and monitoring are essential for maintaining reliability, performance, and cost control across Fabric workloads.
+  </p>
+
+</div>
+
+<footer>
+  <p><a href="13-cost.html">Next → Cost Optimization</a></p>
+</footer>
+
+</body>
+</html>
