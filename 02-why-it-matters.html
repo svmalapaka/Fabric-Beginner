@@ -52,10 +52,6 @@
       align-items: center;
     }
 
-    .tab {
-      font-size: 15px;
-    }
-
     .tab a {
       color: #aaa;
       text-decoration: none;
@@ -90,16 +86,31 @@
       text-decoration: underline;
     }
 
-    /* ===== Footer Always Clickable ===== */
+    /* ===== Footer ===== */
     footer {
-      position: relative;
-      z-index: 10;
       margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
+
+  <!-- ⭐ HEADER GOES HERE -->
+  <div class="tabs">
+    <div class="tab"><a href="/Fabric-Beginner/index.html">Home</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/01-what-is-fabric.html">What Is It</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/02-why-it-matters.html">Why It Matters</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/03-high-level-architecture.html">Architecture</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/04-common-mistakes.html">Common Mistakes</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/05-onelake.html">OneLake</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/06-lakehouse.html">Lakehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/07-warehouse.html">Warehouse</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/08-realtime.html">Real-Time</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/09-datascience.html">Data Science</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/10-pipelines.html">Pipelines</a></div>
+    <div class="tab"><a href="/Fabric-Beginner/11-security.html">Security</a></div>
+  </div>
+  <!-- ⭐ END HEADER -->
 
 <h1>Why Microsoft Fabric Matters</h1>
 <p>Click any component to explore it in detail →</p>
@@ -111,21 +122,6 @@
   <div class="node">Warehouse<br><small>SQL Engine</small></div>
   <div class="node">Real-Time<br><small>Streaming</small></div>
   <div class="node">Data Science<br><small>ML & Notebooks</small></div>
-</div>
-
-<!-- Tabs -->
-<div class="tabs">
-  <div class="tab"><a href="01-what-is-fabric.html">Home</a></div>
-  <div class="tab"><a href="02-why-it-matters.html">Why It Matters</a></div>
-  <div class="tab"><a href="03-high-level-architecture.html">Architecture</a></div>
-  <div class="tab"><a href="04-common-mistakes.html">Common Mistakes</a></div>
-  <div class="tab"><a href="05-onelake.html">OneLake</a></div>
-  <div class="tab"><a href="06-lakehouse.html">Lakehouse</a></div>
-  <div class="tab"><a href="07-warehouse.html">Warehouse</a></div>
-  <div class="tab"><a href="08-realtime.html">Real-Time</a></div>
-  <div class="tab"><a href="09-datascience.html">Data Science</a></div>
-  <div class="tab"><a href="10-pipelines.html">Pipelines</a></div>
-  <div class="tab"><a href="11-security.html">Security</a></div>
 </div>
 
 <!-- Content Box -->
@@ -157,7 +153,7 @@
 </div>
 
 <footer>
-  <p><a href="03-high-level-architecture.html">Next → High-Level Architecture</a></p>
+  <p><a href="/Fabric-Beginner/03-high-level-architecture.html">Next → High-Level Architecture</a></p>
 </footer>
 
 </body>
